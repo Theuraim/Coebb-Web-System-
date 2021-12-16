@@ -1,0 +1,55 @@
+﻿@model Sistema_COEBB.Models.Equipe
+
+@{
+    ViewBag.Title = "Criar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Criar</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Equipe</legend>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.NOME)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.NOME)
+                @Html.ValidationMessageFor(model => model.NOME)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DESCRICAOCARGO)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DESCRICAOCARGO)
+                @Html.ValidationMessageFor(model => model.DESCRICAOCARGO)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DESCRICAOAFINIDADE)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DESCRICAOAFINIDADE)
+                @Html.ValidationMessageFor(model => model.DESCRICAOAFINIDADE)
+            </div>
+
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+
+    <div>
+        @Html.ActionLink("Voltar", "Index")
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,36 @@
+﻿@model Sistema_COEBB.Models.Noticia
+
+@{
+    ViewBag.Title = "DetalheGaleria";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="container" style="text-align:left;">
+
+    <fieldset>
+        <div class="container" style="text-align:center">
+            <h2>@Model.TITULO_NOTICIA</h2>
+        </div>
+        <span class="display-field badge">
+            Postado na data: @Model.DATANOTICIA
+        </span>
+        <br />
+        @if (Model.Fotos.Count == 0)
+        {
+            <img src="~/img/slider/blog3.jpg" alt="Feature-img" align="right" width="100%" class="blog-image" />
+        }
+        else
+        {
+            <img src="@Model.Fotos.ToArray()[0].CAMINHO" alt="Feature-img" align="right" width="100%" class="blog-image" />
+        }
+
+
+        <div class="display-field">
+            @Model.CORPO_TEXTO
+        </div>
+    </fieldset>
+    <br />
+
+    <a class="btn btn-secondary" @Html.ActionLink("Voltar", "Galeria")</a>
+</div>

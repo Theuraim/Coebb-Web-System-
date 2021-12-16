@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Sistema_COEBB.Models.Noticia>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    
+
+    <p>
+        @Html.ActionLink("Criar", "Create")
+    </p>
+</div>
+<div class="container-fluid" style="text-align:center">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3 col-md-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action bg-warning">
+                        Noticia
+                    </a>
+                    <a href="../Foto/Index" class="list-group-item list-group-item-action">Foto</a>
+                    <a href="../Equipe/Index" class="list-group-item list-group-item-action">Equipe</a>
+                </div>
+            </div>
+
+            <div class="col-xs-9 col-md-9">
+                <table border="1">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TITULO_NOTICIA)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CORPO_TEXTO)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DATANOTICIA)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TIPO)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TAGS)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TITULO_NOTICIA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CORPO_TEXTO)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DATANOTICIA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TIPO)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TAGS)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.IDNOTICIA }) |
+                                @Html.ActionLink("Detalhes", "Details", new { id = item.IDNOTICIA }) |
+                                @Html.ActionLink("Deletar", "Delete", new { id = item.IDNOTICIA })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/scripts/jquery-1.10.2.js")"></script>
+<script src="@Url.Content("~/scripts/bootstrap.js")"></script>

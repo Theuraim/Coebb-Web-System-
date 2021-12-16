@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Sistema_COEBB.Models.Foto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="container">
+      
+        <p>
+            @Html.ActionLink("Criar", "Create")
+        </p>
+    </div>
+
+<div class="container-fluid" style="text-align:center">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3 col-md-3">
+                <div class="list-group">
+                    <a href="../Noticia/Index" class="list-group-item list-group-item-action">Noticia</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-warning">
+                        Foto
+                    </a>
+                    <a href="../Equipe/Index" class="list-group-item list-group-item-action">Equipe</a>
+                </div>
+            </div>
+
+            <div class="col-xs-9 col-md-9">
+                <table border="1">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CAMINHO)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NOMEFOTO)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Noticia.TITULO_NOTICIA)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Equipe.NOME)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <img src="@item.CAMINHO" border="0" width="150" />
+                                @Html.HiddenFor(modelItem => item.CAMINHO)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NOMEFOTO)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Noticia.TITULO_NOTICIA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Equipe.NOME)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.IDFOTO }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.IDFOTO }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.IDFOTO })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

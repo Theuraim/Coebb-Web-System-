@@ -1,0 +1,72 @@
+﻿@model Sistema_COEBB.Models.Noticia
+
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h2>Editar</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Noticia</legend>
+
+            @Html.HiddenFor(model => model.IDNOTICIA)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.TITULO_NOTICIA)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.TITULO_NOTICIA)
+                @Html.ValidationMessageFor(model => model.TITULO_NOTICIA)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CORPO_TEXTO)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CORPO_TEXTO)
+                @Html.ValidationMessageFor(model => model.CORPO_TEXTO)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DATANOTICIA)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DATANOTICIA)
+                @Html.ValidationMessageFor(model => model.DATANOTICIA)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.TIPO)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.TIPO)
+                @Html.ValidationMessageFor(model => model.TIPO)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.TAGS)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.TAGS)
+                @Html.ValidationMessageFor(model => model.TAGS)
+            </div>
+
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }
+ 
+    <div>
+        @Html.ActionLink("Voltar", "Index")
+    </div>
+</div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

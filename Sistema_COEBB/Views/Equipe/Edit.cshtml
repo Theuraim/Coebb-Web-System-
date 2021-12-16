@@ -1,0 +1,57 @@
+﻿@model Sistema_COEBB.Models.Equipe
+
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h2>Editar</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Equipe</legend>
+
+            @Html.HiddenFor(model => model.IDEQUIPE)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.NOME)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.NOME)
+                @Html.ValidationMessageFor(model => model.NOME)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DESCRICAOCARGO)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DESCRICAOCARGO)
+                @Html.ValidationMessageFor(model => model.DESCRICAOCARGO)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DESCRICAOAFINIDADE)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DESCRICAOAFINIDADE)
+                @Html.ValidationMessageFor(model => model.DESCRICAOAFINIDADE)
+            </div>
+
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+
+    }
+
+    <div>
+        @Html.ActionLink("Voltar", "Index")
+    </div>
+</div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

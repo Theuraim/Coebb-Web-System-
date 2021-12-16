@@ -1,0 +1,176 @@
+﻿@model IEnumerable<Sistema_COEBB.Models.Equipe>
+
+@{
+    ViewBag.Title = "Equipe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row container-kamn">
+    <img class="d-none d-sm-none d-md-block w-100 img-fluid rounded" src="~/img/slider/slide9.jpg" alt="First slide">
+    <img class="d-block d-sm-block d-md-none w-100 img-responsiva rounded" src="~/img/slider/slide9.jpg" alt="Third slide" />
+</div>
+
+<div id="banners"></div>
+<div class="container">
+    <h1>Direção</h1>
+    <div class="row">
+        @if (Model.Count() == 0)
+        {
+            <p>Sem membros para exibição</p>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                if (@item.DESCRICAOCARGO == "Diretor" || @item.DESCRICAOCARGO == "Diretora" || @item.DESCRICAOCARGO == "Vice-Diretor" || @item.DESCRICAOCARGO == "Vice-Diretora" || @item.DESCRICAOCARGO == "Coordenadora" || @item.DESCRICAOCARGO == "Coordenador" || @item.DESCRICAOCARGO == "diretor" || @item.DESCRICAOCARGO == "diretora" || @item.DESCRICAOCARGO == "vice-diretor" || @item.DESCRICAOCARGO == "vice-diretora" || @item.DESCRICAOCARGO == "coordenadora" || @item.DESCRICAOCARGO == "coordenador")
+                {
+                    <div class="col-md-6">
+                        <div class="blockquote-box blockquote-danger animated wow fadeInRight clearfix">
+                            <div class="col-md-3 centro">
+                                @if (item.Fotos.Count == 0)
+                                {
+                                    <img src="~/img/slider/blog3.jpg" alt="Feature-img"  width="120" height="100" class="blog-image" />
+                                }
+                                else
+                                {
+                                    <img src="@item.Fotos.ToArray()[0].CAMINHO" alt="Feature-img" width="120" height="100" class="blog-image" />
+                                }
+                            </div>
+                            <h5>
+                                @item.NOME
+                            </h5>
+                            <p>
+                                @item.DESCRICAOCARGO @item.DESCRICAOAFINIDADE
+
+                            </p>
+                        </div>
+                    </div>
+                }
+            }
+        }
+    </div>
+</div>
+
+<div class="container">
+    <h1>Professores</h1>
+    <div class="row">
+        @if (Model.Count() == 0)
+        {
+            <p>Sem membros para exibição</p>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                if (@item.DESCRICAOCARGO == "Professor" || @item.DESCRICAOCARGO == "Professora" || @item.DESCRICAOCARGO == "professor" || @item.DESCRICAOCARGO == "professora")
+                {
+                    <div class="col-md-6">
+                        <div class="blockquote-box blockquote-danger animated wow fadeInRight clearfix">
+                            <div class="col-md-3 centro">
+                                @if (item.Fotos.Count == 0)
+                                {
+                                    <img src="~/img/slider/blog3.jpg" alt="Feature-img"  width="120" height="100" class="blog-image" />
+                                }
+                                else
+                                {
+                                    <img src="@item.Fotos.ToArray()[0].CAMINHO" alt="Feature-img"  width="120" height="100" class="blog-image" />
+                                }
+                            </div>
+                            <h5>
+                                @item.NOME
+                            </h5>
+                            <p>
+                                @item.DESCRICAOCARGO @item.DESCRICAOAFINIDADE
+
+                            </p>
+                        </div>
+                    </div>
+                }
+            }
+        }
+    </div>
+</div>
+<div class="container">
+    <h1>Funcionarios</h1>
+
+    <div class="row">
+        @if (Model.Count() == 0)
+        {
+            <p>Sem membros para exibição</p>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                if (@item.DESCRICAOCARGO == "Funcionario" || @item.DESCRICAOCARGO == "Funcionaria" || @item.DESCRICAOCARGO == "funcionario" || @item.DESCRICAOCARGO == "funcionaria" || @item.DESCRICAOCARGO == "Funcionário" || @item.DESCRICAOCARGO == "Funcionária" || @item.DESCRICAOCARGO == "funcionário" || @item.DESCRICAOCARGO == "funcionária")
+                {
+                    <div class="col-md-6">
+                        <div class="blockquote-box blockquote-danger animated wow fadeInRight clearfix">
+                            <div class="col-md-3 centro">
+                                @if (item.Fotos.Count == 0)
+                                {
+                                    <img src="~/img/slider/blog3.jpg" alt="Feature-img"  width="120" height="100" class="blog-image" />
+                                }
+                                else
+                                {
+                                    <img src="@item.Fotos.ToArray()[0].CAMINHO" alt="Feature-img"  width="120" height="100" class="blog-image" />
+                                }
+                            </div>
+                            <h5>
+                                @item.NOME
+                            </h5>
+                            <p>
+                                @item.DESCRICAOCARGO @item.DESCRICAOAFINIDADE
+
+                            </p>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    
+                }
+            }
+        }
+    </div>
+</div>
+<div class="container">
+    <h1>Monitores</h1>
+
+    <div class="row">
+        @if (Model.Count() == 0)
+        {
+            <p>Sem membros para exibição</p>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                if (@item.DESCRICAOCARGO == "Monitor" || @item.DESCRICAOCARGO == "Monitora" || @item.DESCRICAOCARGO == "monitor" || @item.DESCRICAOCARGO == "monitora")
+                {
+                    <div class="col-md-6">
+                        <div class="blockquote-box blockquote-danger animated wow fadeInRight clearfix">
+                            <div class="col-md-3 centro">
+                                @if (item.Fotos.Count == 0)
+                                {
+                                    <img src="~/img/slider/blog3.jpg" alt="Feature-img"  width="120" height="100" class="blog-image" />
+                                }
+                                else
+                                {
+                                    <img src="@item.Fotos.ToArray()[0].CAMINHO" alt="Feature-img" width="120" height="100" class="blog-image" />
+                                }
+                            </div>
+                            <h5>
+                                @item.NOME
+                            </h5>
+                            <p>
+                                @item.DESCRICAOCARGO @item.DESCRICAOAFINIDADE
+
+                            </p>
+                        </div>
+                    </div>
+                }
+            }
+        }
+    </div>
+</div>

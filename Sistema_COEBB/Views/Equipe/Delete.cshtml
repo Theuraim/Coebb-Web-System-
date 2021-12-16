@@ -1,0 +1,44 @@
+﻿@model Sistema_COEBB.Models.Equipe
+
+@{
+    ViewBag.Title = "Deletar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h2>Deletar</h2>
+
+    <h3>Você tem certeza que deseja deletar isso ?</h3>
+    <fieldset>
+        <legend>Equipe</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.NOME)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NOME)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.DESCRICAOCARGO)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DESCRICAOCARGO)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.DESCRICAOAFINIDADE)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DESCRICAOAFINIDADE)
+        </div>
+    </fieldset>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <p>
+            <input type="submit" value="Delete" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </p>
+    }
+</div>

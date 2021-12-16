@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Fundamental";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+
+        <div class="side-left col-md-3 oran">
+
+            <h3 class="lead">Sobre a escola : </h3>
+            <hr />
+
+            <p>Curabitur vulputate, ligula lacinia scelris que tempor, lacus lacus ornare ante, ac egeistas est urna sit amet arcu. Class apte nt taeraciti sociosqu ad litora torquent.</p>
+            <div class="list-group">
+                <a href="../Cursos/SobreEscola" class="list-group-item list-group-item-action">Sobre a Escola</a>
+                <a href="../Cursos/PreEscola" class="list-group-item list-group-item-action">Pré-Escola</a>
+                <a href="../Cursos/Fundamental" class="list-group-item list-group-item-action active">Fundamental I</a>
+                <a href="../Cursos/Fundamental2" class="list-group-item list-group-item-action">Fundamental II</a>
+                <a href="../Cursos/EnsinoMedio" class="list-group-item list-group-item-action">Ensino Médio</a>
+            </div>
+        </div>
+        <div class="col-sm-9 col-md-9">
+            <h2>Fundamental</h2>
+            <!--uma imagem qualquer-->
+            <img class="d-none d-sm-none d-md-block w-100 img-fluid rounded" src="~/img/08.jpg" alt="First slide">
+            <img class="d-block d-sm-block d-md-none w-100 img-responsiva rounded" src="~/img/08.jpg" alt="Third slide" />
+
+            <hr />
+            <p>
+                Curabitur vulputate, ligula lacinia scelrisque tempor, lacus lacus ornare ante, ac egeistas est urna sit amet arcu.
+                Class aptent taeraciti sociosqu ad litora torquent. Hibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi euismod magna ac lorem rutrum elementum.
+                Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a dolor sit amet lipsum enim in.
+                Curabitur vulputate, ligula lacinia scelrisque tempor, lacus lacus ornare ante, ac egeistas est urna sit amet arcu.
+                Class aptent taeraciti sociosqu ad litora torquent. Hibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi euismod magna ac lorem rutrum elementum.
+                Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a dolor sit amet lipsum enim in.
+            </p>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('a[href*=#]:not([href=#])').click(function () {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });</script>

@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "SobreEscola";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class=" side-left col-md-3 oran">
+
+            <h3 class="lead">Sobre a escola : </h3>
+            <hr />
+
+            <p>Curabitur vulputate, ligula lacinia scelris que tempor, lacus lacus ornare ante, ac egeistas est urna sit amet arcu. Class apte nt taeraciti sociosqu ad litora torquent.</p>
+            <div class="list-group">
+                <a href="../Cursos/SobreEscola" class="list-group-item list-group-item-action active">Sobre a Escola</a>
+                <a href="../Cursos/PreEscola" class="list-group-item list-group-item-action">Pré-Escola</a>
+                <a href="../Cursos/Fundamental" class="list-group-item list-group-item-action">Fundamental I</a>
+                <a href="../Cursos/Fundamental2" class="list-group-item list-group-item-action">Fundamental II</a>
+                <a href="../Cursos/EnsinoMedio" class="list-group-item list-group-item-action">Ensino Médio</a>
+            </div>
+        </div>
+        <div class="col-sm-9 col-md-9">
+            <h2>Sobre a Escola</h2>
+            <!--uma imagem qualquer-->
+            <img class="d-none d-sm-none d-md-block w-100 img-fluid rounded" src="~/img/03.jpg" alt="First slide" />
+            <img class="d-block d-sm-block d-md-none w-100 img-responsiva rounded" src="~/img/03.jpg" alt="Third slide" />
+            <hr />
+            <h4>Como Começamos</h4>
+            <p>
+                A nossa Escola é chamada de Cooperativa Educacional de Barra Bonita - COEBB e está localizado à Rua Tiradentes – 345 – Centro, Barra Bonita/SP, CEP: 17.340-000. Ela mantém a Educação Infantil Creche e Pré-Escola, Ensino Fundamental de 1º ao 9º ano e Ensino Médio de 1º a 3º ano.
+                Seu início em 2001 aconteceu com a reunião de alguns pais que procuravam uma escola que pudesse atender seus filhos com educação de qualidade e por um preço justo.  No dia 15/07/2018 estaremos completando 17 anos.
+                É regida por um Estatuto e um Regimento próprios, elaborado pela equipe escolar, com a aprovação dos órgãos competentes tais: como SESCOOP, JUCESP e Conselho de Escola.
+                A COEBB iniciou suas atividades num bairro da cidade e agora está localizada nas proximidades do centro comercial e residencial de classe sócia econômica média.
+            </p>
+          
+            <h4>Objetivos e Finalidades</h4>
+            <p>
+                Parceiros envolvidos: a realização de uma gestão democrática em nossa escola significa acreditar que todos juntos (pais, direção, professores, funcionários e alunos), têm mais chance de encontrar caminhos para atender as expectativas da sociedade a respeito da atuação da escola. A democratização de gestão é partilhada entre todos os cooperados onde é sempre a maioria que decide. Os cooperados aprendem a participar, pois é participando que se aprende.
+
+                Usamos o material da Rede Pitágoras, já há alguns anos, sendo do agrado de pais e professores. Sempre somos amparados pelos coordenadores da Rede e até hoje estamos conseguindo ótimos resultados com nossos alunos em vestibulares e em outros testes de conhecimento.
+
+
+                RECURSOS  -  Todas as salas estão equipadas com carteiras e cadeiras adequadas e em quantidade necessária, lousa branca, persianas, ventiladores e/ou ar condicionado e armários ou estantes.
+                RECURSOS MATERIAIS: Kit Pedagógico (abrangendo todos os componentes curriculares); Kit Pedagógico (materiais lúdicos); Livros de literatura infantil; Livros de literatura juvenil; Livros Didáticos; Livros Para Didáticos; Dicionários; Revistas; Jornais; Gibis; Jogos Diversos; Data Show; Televisões; Vídeo Cassete; Rádios Gravadores- CD; CDs diversos; Colchonetes; Banda Rítmica; Brinquedos para Areia; Material de Ed. Física: bambolês, bolas.
+
+                Os alunos são oriundos de todos os bairros da cidade, inclusive dos mais distantes.
+                A maioria dos pais é jovem, com média de instrução superior e participante do trabalho e funcionamento da Unidade Escolar, uma vez que esta é uma Cooperativa de Pais, sendo por isso, atuantes em todos os segmentos da empresa.
+
+            </p>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('a[href*=#]:not([href=#])').click(function () {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });</script>

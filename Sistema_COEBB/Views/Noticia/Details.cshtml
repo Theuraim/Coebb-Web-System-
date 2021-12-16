@@ -1,0 +1,53 @@
+﻿@model Sistema_COEBB.Models.Noticia
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h2>Detalhes</h2>
+
+    <fieldset>
+        <legend>Noticia</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.TITULO_NOTICIA)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.TITULO_NOTICIA)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.CORPO_TEXTO)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CORPO_TEXTO)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.DATANOTICIA)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DATANOTICIA)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.TIPO)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.TIPO)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.TAGS)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.TAGS)
+        </div>
+    </fieldset>
+
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.IDNOTICIA }) |
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+</div>

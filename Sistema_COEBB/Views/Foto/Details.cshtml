@@ -1,0 +1,45 @@
+﻿@model Sistema_COEBB.Models.Foto
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h2>Detalhes</h2>
+
+    <fieldset>
+        <legend>Foto</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.CAMINHO)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CAMINHO)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.NOMEFOTO)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NOMEFOTO)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Noticia.TITULO_NOTICIA)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Noticia.TITULO_NOTICIA)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Equipe.NOME)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Equipe.NOME)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.IDFOTO }) |
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+</div>
